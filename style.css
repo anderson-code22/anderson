@@ -1,0 +1,679 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Estilo do header */
+
+/* Header base */
+header a {
+  text-decoration: none;
+}
+
+.header {
+  max-width: 100vw;
+  background: #001b40;
+  padding-inline: 16px;
+}
+
+.nav {
+  max-width: 1280px;
+  height: 70px;
+  margin-inline: auto;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 48px;
+  font-weight: 500;
+  color: #d97706;
+}
+
+.logo span {
+  color: #ffffff;
+  font-weight: 300;
+}
+
+.nav-list {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-list a {
+  font-size: 18px;
+  color: #ffffff;
+  padding-block: 16px;
+}
+
+.hamburger {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 36px;
+  cursor: pointer;
+  color: #ffffff;
+
+  z-index: 901;
+}
+
+@media (max-width: 750px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #001b40;
+    clip-path: circle(100px at 90% -15%);
+    transition: 1s ease-out;
+
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+    pointer-events: none;
+  }
+
+  .nav-list a {
+    font-size: 24px;
+    opacity: 0;
+  }
+
+  .nav-list li:nth-child(1) a {
+    transition: 0.5s 0.2s;
+  }
+
+  .nav-list li:nth-child(2) a {
+    transition: 0.5s;
+  }
+
+  .nav-list li:nth-child(3) a {
+    transition: 0.5s 0.6s;
+  }
+
+  .nav-list li:nth-child(4) a {
+    transition: 0.5s 0.8s;
+  }
+
+  .nav-list li:nth-child(5) a {
+    transition: 0.5s 0.1s;
+  }
+  /* Estilos ativos */
+
+  .nav.active .nav-list {
+    z-index: 900;
+    clip-path: circle(1500px at 90% -15px);
+    pointer-events: all;
+  }
+
+  .nav.active .nav-list a {
+    opacity: 1;
+  }
+
+  .nav.active .hamburger {
+    position: fixed;
+    top: 26px;
+    right: 16px;
+  }
+}
+
+/* Hero */
+
+.Hero {
+  background-image: url(image/Hero-foto.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 40px;
+}
+
+.Txt-Hero h1 {
+  font-size: 32px;
+  font-weight: 300;
+  color: #ffffff;
+  padding-bottom: 40px;
+}
+
+.Txt-Hero h1 span {
+  display: block;
+  font-weight: 500;
+  color: #d97706;
+}
+
+.Txt-Hero p {
+  color: #ffffff;
+  padding-bottom: 50px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.Txt-Hero button {
+  background-color: transparent;
+  border: 1px solid #d97706;
+  padding: 10px;
+  color: #d97706;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+
+  transition: 0.5s;
+}
+
+.Txt-Hero button:hover {
+  background-color: #d97706;
+  color: #001b40;
+}
+
+/* Oque fazem */
+
+.Oque-Fazem {
+  max-width: 1440px;
+  margin: 0 auto;
+  margin-top: -100px;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.Fazem button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #001b40;
+  color: #ffffff;
+  font-size: 32px;
+}
+
+.Oque-Fazem .Fazem:nth-child(3) button {
+  background-color: #d97706;
+  border: none;
+}
+
+.Oque-Fazem .Fazem {
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  height: 200px;
+  padding: 20px;
+  box-shadow: 1px 1px 5px;
+}
+
+.Oque-Fazem .Txt-Fazem {
+  display: flex;
+  gap: 30px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+@media (max-width: 750px) {
+  .Oque-Fazem {
+    padding: 0 40px;
+    margin-top: 20px;
+
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .Oque-Fazem .Fazem {
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    max-width: 300px;
+    margin: 0 20px;
+    padding: 20px;
+    box-shadow: 1px 1px 5px;
+  }
+}
+
+/* Quem somos */
+
+.Quem-Somos {
+  max-width: 1440px;
+  margin: 40px auto;
+}
+
+.Quem-Somos li {
+  color: #d97706;
+  font-size: 24px;
+  margin-left: 23px;
+}
+
+.Quem-Somos a {
+  text-decoration: none;
+}
+
+.Quem-Somos ul {
+  padding-bottom: 30px;
+  font-weight: 300;
+}
+
+.Quem-Somos p {
+  font-size: 16px;
+  padding-bottom: 20px;
+  text-align: justify;
+}
+
+.Quem-Somos button {
+  background-color: #001b40;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  cursor: pointer;
+
+  transition: 0.5s;
+}
+
+.Quem-Somos button:hover {
+  background-color: #013174;
+}
+
+@media (max-width: 750px) {
+  .Quem-Somos {
+    padding: 40px;
+    max-width: 400px;
+  }
+
+  .Quem-Somos ul {
+    text-align: center;
+    list-style: none;
+  }
+
+  .Quem-Somos p {
+    font-size: 16px;
+  }
+}
+
+/* Contador / Colaboradores */
+
+.Contador {
+  background-color: #001b40;
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.Contador .Dado {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Contador .Dado h3 {
+  font-size: 36px;
+  color: #d97706;
+  font-weight: 600;
+}
+
+.Contador .Dado h4 {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+@media (max-width: 750px) {
+  .Contador {
+    background-color: #001b40;
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    
+  }
+
+  .Contador .Dado h3 {
+    font-size: 24px;
+  }
+
+  .Contador .Dado h4 {
+    font-size: 16px;
+  }
+}
+
+/* Soluções */
+
+section.Solucoes {
+  max-width: 1440px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+section.Solucoes img {
+  border-radius: 10px;
+  max-height: 430px;
+}
+
+section.Solucoes .Txt-Solucoes p {
+  font-size: 16px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+section.Solucoes .Txt-Solucoes button {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #d97706;
+  color: #ffffff;
+  font-weight: 300;
+  cursor: pointer;
+
+  transition: 0.5s;
+}
+
+section.Solucoes .Txt-Solucoes button:hover {
+  background-color: #001b40;
+}
+
+@media (max-width: 750px) {
+  section.Solucoes {
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  section.Solucoes img {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  section.Solucoes .Txt-Solucoes {
+    max-width: 100%;
+  }
+}
+
+/* Sobre */
+
+.Inicio-Pagina {
+  height: 20vh;
+  background-image: url(image/Fundo-Nome-CaminhoPagina.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.Inicio-Pagina {
+  text-align: center;
+  padding-top: 6vh;
+}
+
+.Inicio-Pagina h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.Inicio-Pagina p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.Inicio-Pagina p span {
+  color: #d97706;
+}
+
+.Valores {
+  display: grid;
+  max-width: 1440px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.Valores .Fazem {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.Valores .Txt-Fazem h2 {
+  font-size: 24px;
+}
+
+.Valores .Fazem button {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 300;
+  background-color: #138813;
+  border: none;
+}
+
+.Valores .Fazem:nth-child(3) button {
+  background-color: #cf0707;
+  border: none;
+}
+
+@media (max-width: 750px) {
+  .Valores {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    padding: 40px;
+    gap: 20px;
+  }
+}
+
+/* Serviços */
+
+.Servicos {
+  max-width: 1440px;
+  margin: 80px auto;
+}
+
+.Servicos .Servico {
+  background-color: #d3d3d3;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  padding: 40px;
+}
+
+.Servicos .Servico button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  font-size: 36px;
+  background-color: transparent;
+  color: #000000;
+}
+
+.Servico h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.Servicos .Servico p {
+  font-size: 16px;
+}
+
+@media (max-width: 750px) {
+  .Servicos {
+    padding: 40px;
+    margin-bottom: 0;
+  }
+}
+
+.Nossos-Diferenciais {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.Nossos-Diferenciais h2 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.Nossos-Diferenciais .Cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.Card {
+  background-color: #001b40;
+  padding: 30px;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.Card button {
+  background-color: transparent;
+  font-size: 24px;
+  border: none;
+  color: #ffffff;
+}
+
+.Card h3 {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.Card p {
+  font-size: 16px;
+}
+
+@media (max-width: 750px) {
+  .Nossos-Diferenciais {
+    margin-top: 0;
+    padding: 40px;
+  }
+
+  .Nossos-Diferenciais .Cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 50px;
+    gap: 20px;
+  }
+}
+
+/* Blog */
+
+.Postagens {
+  max-width: 1440px;
+  margin: 80px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.Postagen {
+  background-color: #001b40;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.Postagen img {
+  max-width: 350px;
+  border-radius: 10px 10px 0 0;
+}
+
+.Postagen h2,
+.Postagen h3,
+.Postagen p {
+  padding: 10px;
+}
+
+.Postagen h2 {
+  color: #d97706;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.Postagen h3 {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.Postagen p {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+@media (max-width: 750px) {
+  .Postagens {
+    margin-top: 10px;
+    margin-bottom: -20px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .Postagen {
+    background-color: #001b40;
+    border-radius: 10px;
+    color: #ffffff;
+    margin: 0 auto;
+  }
+
+  .Postagen img {
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+}
+
+/* Footer */
+
+footer {
+  margin-top: 40px;
+  background-color: #001b40;
+  padding: 40px 0;
+  text-align: center;
+  max-width: 100vw;
+}
+
+footer .Topo-Footer button {
+  font-size: 26px;
+  gap: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  transition: 0.5s;
+  margin: 0 10px;
+}
+
+footer .Topo-Footer button:hover {
+  background-color: #d97706;
+  border: 1px solid #d97706;
+  color: #001b40;
+}
+
+footer .Botton-Footer p {
+  border-top: 1px solid #d97706;
+  color: #ffffff;
+  padding-top: 20px;
+  max-width: 75vw;
+  margin: 0 auto;
+}
